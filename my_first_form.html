@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First HTML Form</title>
+</head>
+<body>
+<h1>User Login</h1>
+<form action="http://requestb.in/qjtandqj" method="POST">
+
+    <label for="fname">Name</label>
+    <input id="fname" type="text" name="First_Name" placeholder="Type full name here">
+
+    <input type="hidden" name="ssn" value="123">
+
+    <label for="age">Age</label>
+    <input id="age" type="text" name="Age" placeholder="Type your age here">
+    <input type="hidden" name="ssn" value="123">
+
+    <label action="password">Password</label>
+    <input id="password" type="password" name="password" placeholder="Pick a good one!">
+
+    <p>What's your favorite color?</p>
+    <label for="green">Green</label>
+    <input type="checkbox" name="color[]" value="green">
+    <label for="yellow">Yellow</label>
+    <input type="checkbox" name="color[]" value="yellow">
+    <label for="rainbow">Rainbow</label>
+    <input type="checkbox" name="color[]" value="Rainbow">
+
+    <p>What day is it?</p>
+    <label for="monday">Monday</label>
+    <input id="monday" type="radio" name="day" value="1">
+
+    <label for="tuesday">Tuesday</label>
+    <input id="tuesday" type="radio" name="day" value="2">
+
+    <label for="other">Can't remember</label>
+    <input id="other" type="radio" name="day" value="3">
+
+    <br>
+    <br>
+
+    <label for="address">Address</label>
+    <br>
+    <textarea name="address" id="address" cols="30" row="10"></textarea>
+
+    <br>
+
+    <label for="condoles">Consoles</label>
+    <select name="console" id="console">
+        <option value="ps4">PS4</option>
+        <option value="XBOX1">XBOX ONE</option>
+        <option value="switch">Nintendo Switch</option>
+        </select>
+    <br>
+
+    <!--<input type="submit" name="Send">-->
+    <button>Send</button>
+
+    <h1>Compose an Email</h1>
+    <form action="http://requestb.in/qjtandqj" method="POST">
+
+        <label for="address"></label>
+        <br>
+        <textarea name="address" id="address" cols="30" row="10" placeholder="Enter an email here..."></textarea>
+
+        <label for="address"></label>
+        <br>
+        <textarea name="address" id="address" cols="30" row="10" placeholder="Enter your subject here..."></textarea>
+
+        <label for="address"></label>
+        <br>
+        <textarea name="address" id="address" cols="30" row="10" placeholder="Enter your message here..."></textarea>
+
+        <br>
+
+        <label for="save">Save copy to inbox</label>
+        <input type="checkbox" id="save" name="save" value="yes" checked>
+
+        <br>
+
+        <button>Send</button>
+
+        <h1>Multiple Choice Test</h1>
+        <form action="http://requestb.in/qjtandqj" method="POST">
+
+            <p>Which country would you like to visit most?</p>
+            <label>
+                <input type="radio" name="Q" value="South Africa">South Africa
+            </label>
+            <label>
+                <input type="radio" name="Q" value="Morocco">Morocco
+            </label>
+            <label>
+                    <input type="radio" name="Q" value="Burma">Burma
+            </label>
+
+            <p>If you could only take one thing with you what would it be?</p>
+            <label><input type="checkbox" id="a1" name="as[]" value="camera">Camera</label>
+            <label><input type="checkbox" id="a2" name="as[]" value="coffeemaker">Coffee Maker</label>
+            <label><input type="checkbox" id="a3" name="as[]" value="notebook">Notebook</label>
+            <label><input type="checkbox" id="a4" name="as[]" value="pillow">Your pillow</label>
+
+            <br>
+
+            <button>Send</button>
+
+            <h1>Select Testing</h1>
+            <form action="http://requestb.in/qjtandqj" method="POST"</form>
+            <label for="santa">Is Santa real?</label>
+            <select>
+                <id="santa" name="santa">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+            </select>
+
+            <br>
+
+            <button>Send</button>
+        <!--NOT SHOWING THIS FORMS RESULTS IN REQUESTBIN-->
+
+</form>
+</body>
+</html>

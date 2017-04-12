@@ -1,0 +1,44 @@
+/* Selectors */
+/*element selectors*/
+
+header {
+    /*CSS rule*/
+    /*property value*/
+    background-color: black;
+}
+a {
+    /*rules delimiters*/
+    color: lightgray;
+}
+
+.top-navigation {
+    font-weight: bold;
+}
+
+.pill-nav {
+    border-style: solid;
+    border-color: aquamarine;
+    border-width: 1px;
+}
+
+.top-navigation a {
+    color: gray;
+    text-decoration: none;
+}
+
+/*!*which selector is more important *!*/
+
+/*1 id */
+/*2 classes*/
+/*3 elements*/
+
+#current {
+    background-color: #0366D6;
+    color: #FFF;
+}
+
+
+
+ul {
+    list-style: none;
+}

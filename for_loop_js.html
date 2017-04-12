@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Loops</title>
+</head>
+<body>
+
+<script>
+
+    'use strict';
+
+//
+    //Write the JS code to log to the console the multiplication table for a random number between 1 and 10.
+//    for () (var i = 0; i <= ; i++ ) {
+//        console.log("i" + i);
+//    }
+
+
+    for (var i = 1; i <= 10; i++ ) {
+
+        var number = Math.floor(Math.random() * 200) + 20;
+        if(number % 2 === 0) {
+            console.log(number + " even");
+        }
+        else {
+            console.log(number + " odd");
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
+<!--exercise 3-->
+
+for (var i = 100; i >=5; -=5) {
+console.log(i);
+}
+
+
+var y = 0;
+
+while (true) {
+    if (y ===10) {
+    consolde.log("End of loop");
+    break;
+}
+}
+
+console.log("Access granded");

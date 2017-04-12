@@ -1,0 +1,25 @@
+body {
+    background-color: aliceblue;
+    background-image: url(../img/hellobackground.jpg);
+
+
+}
+
+h1, h2 {
+    color: green;
+    text-decoration: underline;
+}
+
+p {
+    color: black;
+ }
+
+h1, p {
+    font-family: 'Slabo 27px', serif;
+}
+
+ol, ul {
+    list-style: square;
+}
+
+

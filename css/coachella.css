@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family:;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+header > h1 {
+    float: left;
+}
+
+header > nav {
+    float: right;
+}

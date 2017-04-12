@@ -1,0 +1,73 @@
+/* Reset */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav > ul {
+    list-style-type: none;
+}
+
+/* Layout */
+
+header > h1 {
+    float: left;
+}
+
+header > nav {
+    float: right;
+}
+.container {
+    margin: 20px;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.hero {
+    clear: both;
+    width: 100%;
+}
+.hero img {
+    height: 385px;
+    width: 100%;
+}
+#asidesection {
+    width: auto;
+}
+
+.text-box {
+    height: 400px;
+}
+
+#mainsection {
+    width: 65%;
+    float: left;
+    margin-right: 10px;
+}
+
+footer > p {
+float: left;
+}
+
+footer ul li {
+    display: inline-block;
+}
+
+footer ul li a {
+    text-decoration: none;
+}
+
+.footer-nav {
+    float: right;
+}
