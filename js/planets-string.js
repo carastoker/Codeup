@@ -22,6 +22,8 @@
     //        You will need an opening AND closing <ul> tags around the entire string, and <li> tags around each planet.
     //        console.log() your results.
 
+    var planetList = "<ul><li>" + planetsArray.join('</li><li>') + "</li></ul>";
+    document.write(planetList);
 
 })();
 
