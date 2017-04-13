@@ -45,11 +45,43 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    // need to figure out if they spent more than $200
+
+        //apply discount if they spent more thqn $200
+
+
+    var shoppers = [
+        {
+            name: 'Cameron',
+            amount: 180
+        },
+
+        {
+            name: 'Ryan',
+            amount: 250
+        },
+
+        {
+            name: 'George',
+            amount: 320
+        }
+    ];
+
+
+    function addDiscount(total){
+        var discountRate = .35;
+        if(total > 200) {
+            var message = discountRate + " discount applied. New total will be $" + (total - (total * discountRate));
+            return message ;
+        } else {
+            return "No discount applied to purchase. Your total will be " + total;
+        }
+    }
+    shoppers.forEach(function(shopper){
+        console.log(shopper.name + " spent " + shopper.amount );
+        console.log(addDiscount(shopper.amount));
+    });
+
 
 
 })();
