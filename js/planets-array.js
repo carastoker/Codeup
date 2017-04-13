@@ -63,9 +63,3 @@
         console.log(e.keyCode);``
     })
 })();
-
-var namesString = "Josh, Kay, Maryam";
-console.log(namesString);
-
-var namesArray = namesString.split('Maryam');
-console.log(namesArray);
