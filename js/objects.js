@@ -82,7 +82,33 @@
         console.log(addDiscount(shopper.amount));
     });
 
+    // Object BONUS:
 
+var pet = [
+    {
+    name: 'Leo',
+    species: 'Liger',
+    age: 2,
+    gender: 'nope',
+    clean: true,
+    hungry: false,
+    happy: true,
+    petFood: 10,
+    soap: 3
+}
+
+];
+
+name.callPet = Function () {
+    if()
+        console.log(name  + "!");
+};
+
+name.callpet();
+
+// pet.playWithPet = Function () {};
+// pet.feedPet = Function () {};
+// pet.cleanPet = Function () {};
 
 })();
 
