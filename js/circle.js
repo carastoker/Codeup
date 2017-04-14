@@ -6,17 +6,18 @@
         radius: 3,
 
         getArea: function () {
-            // TODO: complete this method
             // hint: area = pi * radius^2
-
-            return; // TODO: return the proper value
+            // To call a method is: variable.method();
+            var area = Math.PI * (Math.pow(this.radius, 2))
+            return area;
+            console.log(area);
         },
 
         logInfo: function (doRounding) {
-            // TODO: complete this method.
-
-            // If doRounding is true, round the result to the nearest integer.
-            // Otherwise, output the complete value
+            var area = this.getArea();
+            if(doRounding) {
+                area = Math.round(area);
+            }
 
             console.log("Area of a circle with radius: " + this.radius + ", is: ");
         }
@@ -36,4 +37,6 @@
     circle.logInfo(false);
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
+
+
 })();
