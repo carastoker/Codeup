@@ -40,3 +40,21 @@
 
 
 })();
+
+<!--notes-->
+
+<!--var interval = 200;-->
+<!--var i = 1;-->
+<!--var intervalId = setInterval;();-->
+
+<!--intervalId = setInterval(function() {-->
+<!--if (i === 10)-->
+
+<!--}-->
+<!--console.log('Howdy!');-->
+
+<!--++i;-->
+
+<!--}, interval);-->
+
+<!--console.log(intervalId);-->
