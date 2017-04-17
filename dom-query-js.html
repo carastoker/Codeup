@@ -46,18 +46,34 @@
         document.getElementById("sub-header").style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+
+        var listItems = document.getElementsByTagName("li");
+
 
         // TODO: Set text color on every other list item to grey
+
         // TODO: Set text color of li with dbid = 1 to blue
+//
+        for (var i=0; i < listItems.length; i+= 2) {
+
+           var items = listItems[i].style.color = "#7c7c7c";
+           var dbId = listItems[i].getAttribute("data-dbid");
+
+           if(dbId < 2) {
+               listItems[i].style.color = "blue";
+           };
+        }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+
+        var subParagraph = document.getElementsByClassName("sub-paragraph");
+        console.log(subParagraph)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+        subParagraph[0].innerText = "Mission Accomplished!";
+
     })();
 </script>
 </body>
 </html>
-
-<!--document.getElementById(id).innerHTML = new HTML-->
