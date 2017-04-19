@@ -6,7 +6,7 @@
     <style type="text/css">
 
         #map-canvas {
-            width: 525px;
+            width: 725px;
             height: 500px;
 
         }
@@ -68,10 +68,10 @@
                 'address': address
             }, function (results, status) {
                 if (status == 'OK') {
-                    map.setCenter(results[0].geometry.location);
+                    mapCode.setCenter(results[0].geometry.location);
                     var marker = new google.maps.Marker({
-                        map: mapCode,
-                        position: results[0].geometry.location
+                        position: results[0].geometry.location,
+                        map: mapCode
                     });
                 } else {
                     alert('geoCode failed for following reason: ' + status);
@@ -79,6 +79,10 @@
 
             });
         }
+
+        codeAddress();
+
+        document.getElementById('update').addEventListener('click', codeAddress);
 
     })();
 
