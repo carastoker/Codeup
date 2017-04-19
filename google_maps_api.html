@@ -1,0 +1,90 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Map API</title>
+    <style type="text/css">
+
+        #map-canvas {
+            width: 525px;
+            height: 500px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="map-canvas"></div>
+
+<label for="address">Address</label>
+<input type="text" id="address" placeholder="Enter Address">
+
+<label for="lat">Lat:</label>
+<input type="text" id="lat" value="29.426791">
+
+<label for="long">Long:</label>
+<input type="text" id="long" value="-98.489602">
+
+<label for="zoom">Zoom:</label>
+<input type="hidden" id="zoom" value="18">
+
+<button id="in">+</button>
+<button id="" out>-</button>
+
+<button id="update">Update map</button>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD62RFjReSVYRRdIMhug0_AWJslFJO_JNE"
+        type="text/javascript"></script>
+
+<script type="text/javascript">
+    (function () {
+
+
+        var geoCoder;
+        var mapCode;
+
+        function startMap() {
+            geoCoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(29.426791, -98.489602);
+            var mapOptions = {
+                zoom: 18,
+                center: latlng,
+                disableDefaultUI: true,
+                mapTypeId: google.maps.MapTypeId.TERRAIN
+            }
+
+            mapCode = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        }
+
+        startMap();
+
+        function codeAddress() {
+            var address = document.getElementById('address').value;
+            geoCoder.geocode({
+                'address': address
+            }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: mapCode,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('geoCode failed for following reason: ' + status);
+                }
+
+            });
+        }
+
+    })();
+
+
+</script>
+
+
+</body>
+</html>
