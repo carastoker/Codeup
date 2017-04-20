@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery_exercises</title>
+</head>
+<body>
+
+<div id='main-div'>
+
+<h1 id='fav-lis'>View Dim Sum List</h1>
+
+<p>If you love dim sum, we can be friends.</p>
+
+<ul>
+
+    <li class="names">Steamed Soup Dumplings</li>
+    <li class="names">Shrimp Dumplings</li>
+    <li class="names">Steamed Pork Buns</li>
+
+</ul>
+
+<h1 id="second-hello">Oh, hi again</h1>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+
+<script>
+
+$(document).ready(function() {
+
+    var content = $('#fav-list').html();
+    alert(content);
+
+
+
+});
+
+</script>
+
+</body>
+</html>

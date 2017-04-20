@@ -64,6 +64,7 @@
 
         function codeAddress() {
             var address = document.getElementById('address').value;
+//          var address = "619 W. Randolph, Chicago, IL 60661";
             geoCoder.geocode({
                 'address': address
             }, function (results, status) {
@@ -72,7 +73,9 @@
                     var marker = new google.maps.Marker({
                         position: results[0].geometry.location,
                         map: mapCode
+
                     });
+
                 } else {
                     alert('geoCode failed for following reason: ' + status);
                 }
@@ -92,3 +95,9 @@
 
 </body>
 </html>
+
+<!--var GoodEats = {-->
+<!--name: "name",-->
+<!--address:-->
+<!--message: ""-->
+<!--}-->
