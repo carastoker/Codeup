@@ -35,7 +35,7 @@
     $(document).ready(function() {
 
 
-        $('h1').click(function(){
+        $('h1').click(function(handlerIn, handlerOut){
             $(this).css('background-color', 'tan');
         });
 
@@ -43,13 +43,14 @@
            $(this).css('font-size', '18px');
        });
 
-       $('li').hover(
+       $('.names').hover(
            function(){
-            $(this).css('font-color', 'gray');
+            $(this).css('color', 'gray');
        },
-       function () {
-           $(this).css('font-color', 'blue');
+       function() {
+           $(this).css('color', 'blue');
        }
+
        );
 
 
