@@ -8,7 +8,7 @@
 
 <div id='main-div'>
 
-    <h1 id='fav-lis'>View Dim Sum List</h1>
+    <h1 id='fav-list'>View Dim Sum List</h1>
 
     <ul>
 
@@ -24,7 +24,7 @@
 
 </div>
 
-
+</script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
@@ -32,15 +32,32 @@
 
 <script>
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
-       $('li').css('font-size', '20px');
-       $('h1, p, li').css('background-color', 'tan');
-        alert($('h1').text());
+
+        $('h1').click(function(){
+            $(this).css('background-color', 'tan');
+        });
+
+       $('p').click(function() {
+           $(this).css('font-size', '18px');
+       });
+
+       $('li').hover(
+           function(){
+            $(this).css('font-color', 'gray');
+       },
+       function () {
+           $(this).css('font-color', 'blue');
+       }
+       );
+
 
     });
 
 </script>
+
+
 
 </body>
 </html>
