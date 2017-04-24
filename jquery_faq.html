@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>jquery_faq</title>
+
+    <style>
+        .invisible {
+            display : none;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -12,8 +19,8 @@
 
     <dl>
         <dt id="1">The Italina word congelato means frozen.</dt>
-        <dd class="invisible">COMING SOON.</dd>
-        <dt id="3">A Sicilian fisherman opend the first gelato cafe in Paris.</dt>
+        <dd class="invisible" >COMING SOON.</dd>
+        <dt id="3">A Sicilian fisherman opened the first gelato cafe in Paris.</dt>
         <dd class="invisible">COMING SOON.</dd>
         <dt id="5">Its warmer temperature also gives it stronger flavor.</dt>
         <dd class="invisible">COMING SOON.</dd>
@@ -21,20 +28,25 @@
         <dd class="invisible">COMING SOON.</dd>
         <dt id="9">Its warmer temperature also gives it stronger flavor.</dt>
         <dd class="invisible">The gelato world cup is totally a thing.</dd>
-    <!--</dl>-->
+        </dl>
+
+    <a id="link" href="#">Link here</a>
 
 </div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 
 <script>
     "use strict";
 
     $(document).ready(function() {
-        $('.invisible').css('display', 'none')
-        });
 
+        $('#link').click(function () {
+            $('dd').toggleClass('invisible')
+        });
+    });
 
 </script>
 
