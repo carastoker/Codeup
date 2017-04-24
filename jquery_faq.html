@@ -6,8 +6,20 @@
 
     <style>
         .invisible {
-            display : none;
+            display: none;
         }
+        .green{
+            background-color: green;
+            color: white;
+        }
+        .bold {
+            font-weight: bold;
+        }
+
+        .blue {
+            color: blue;
+        }
+
     </style>
 
 </head>
@@ -19,7 +31,7 @@
 
     <dl>
         <dt id="1">The Italina word congelato means frozen.</dt>
-        <dd class="invisible" >COMING SOON.</dd>
+        <dd class="invisible">COMING SOON.</dd>
         <dt id="3">A Sicilian fisherman opened the first gelato cafe in Paris.</dt>
         <dd class="invisible">COMING SOON.</dd>
         <dt id="5">Its warmer temperature also gives it stronger flavor.</dt>
@@ -28,9 +40,45 @@
         <dd class="invisible">COMING SOON.</dd>
         <dt id="9">Its warmer temperature also gives it stronger flavor.</dt>
         <dd class="invisible">The gelato world cup is totally a thing.</dd>
-        </dl>
 
-    <a id="link" href="#">Link here</a>
+
+        <a id="link-toggle" href="#">Magical link</a>
+
+        <h3>South Alamode Gelato</h3>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+
+        </ul>
+
+
+        <h3>Rio De Gelato</h3>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+
+        </ul>
+
+        <h3>Puciugo Gelato</h3>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+
+        </ul>
+
+        <button id="button">Magical button</button>
+
+
+    </dl>
 
 </div>
 
@@ -39,14 +87,29 @@
 
 
 <script>
+
     "use strict";
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        $('#link').click(function () {
-            $('dd').toggleClass('invisible')
+        $('#link-toggle').click(function () {
+            $('dd').toggleClass('invisible');
         });
+
+        $('#button').click(function() {
+            $('ul').each(function(){
+                $(this).children().last().toggleClass('green');
+            })
+        });
+
+        $('h3').click(function() {
+            $('li').toggleClass('bold');
     });
+
+       $('li').click(function() {
+            $(this).parent().children().first().toggleClass('blue');
+    });
+});
 
 </script>
 
