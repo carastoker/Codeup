@@ -97,23 +97,23 @@
 
     "use strict";
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
-        $('#link-toggle').click(function () {
+        $('#link-toggle').click(function() {
             $('dd').toggleClass('invisible');
         });
 
-        $('#button').click(function () {
-            $('ul').each(function () {
+        $('#button').click(function() {
+            $('ul').each(function() {
                 $(this).children().last().toggleClass('green');
             })
         });
 
-        $('h3').click(function () {
+        $('h3').click(function() {
             $('li').toggleClass('bold');
         });
 
-        $('li').click(function () {
+        $('li').click(function() {
             $(this).parent().children().first().toggleClass('blue');
         });
         $('#hide-it').click(function () {
@@ -121,13 +121,14 @@
         });
         $('li').hide();
 
-        $('h3').click(function () {
+        $('h3').click(function() {
             $(this).next().children().slideToggle();
         });
+
         $('h2').hide();
-        setTimeout(function(){
+        setTimeout(function() {
             $('h2').fadeIn()
-        },8000 );
+        }, 8000);
 
     });
 
