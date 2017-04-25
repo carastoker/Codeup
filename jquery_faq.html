@@ -8,10 +8,12 @@
         .invisible {
             display: none;
         }
-        .green{
+
+        .green {
             background-color: green;
             color: white;
         }
+
         .bold {
             font-weight: bold;
         }
@@ -24,6 +26,11 @@
 
 </head>
 <body>
+
+<div>
+    <h2>Would you like to sign up for more gelato news?</h2>
+    <span id='hide-it'>x</span>
+</div>
 
 <div>
 
@@ -96,20 +103,33 @@
             $('dd').toggleClass('invisible');
         });
 
-        $('#button').click(function() {
-            $('ul').each(function(){
+        $('#button').click(function () {
+            $('ul').each(function () {
                 $(this).children().last().toggleClass('green');
             })
         });
 
-        $('h3').click(function() {
+        $('h3').click(function () {
             $('li').toggleClass('bold');
-    });
+        });
 
-       $('li').click(function() {
+        $('li').click(function () {
             $(this).parent().children().first().toggleClass('blue');
+        });
+        $('#hide-it').click(function () {
+            $(this).hide();
+        });
+        $('li').hide();
+
+        $('h3').click(function () {
+            $(this).next().children().slideToggle();
+        });
+        $('h2').hide();
+        setTimeout(function(){
+            $('h2').fadeIn()
+        },8000 );
+
     });
-});
 
 </script>
 
