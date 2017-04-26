@@ -22,21 +22,28 @@
     </tbody>
 </table>
 
+<button id="btn-refresh">Refresh Inventory</button>
+
+<style>
+
+
+</style>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
     (function () {
         "use strict";
 
-        var content = "";
-
-        $.get("data/inventory.json").done(function (data) {
-//        console.log(data);
-            buildTable(data);
-
-        });
+        function getData(){
+            $.get("data/inventory.json").done(function (data) {
+    //        console.log(data);
+                buildTable(data);
+            });
+        }
 
         function buildTable(inventory) {
+        var content = "";
             for (var i = 0; i < inventory.length; i++) {
                 content += "<tr>";
                 content += "<td>" + inventory[i].title + "</td>";
@@ -46,11 +53,13 @@
                 content += "</tr>";
                 console.log(content);
             }
-//         console.log(content);
-
-//         console.log(inventory[0].title);
+//
             $('#insertProducts').html(content);
         }
+
+        $('#btn-refresh').click(function() {
+            getData();
+        });
 
         // TODO: Create an ajax GET request for /data/inventory.json
 

@@ -11,7 +11,7 @@
         "quantity": 5,
         "categories": [
             "tool",
-            "powered"
+            " powered"
         ],
         "price": 100
     }, {
@@ -19,16 +19,32 @@
         "quantity": 5,
         "categories": [
             "tool",
-            "gas",
-            "outdoor"
+            " gas",
+            " outdoor"
         ],
         "price": 200
     }, {
         "title": "Screwdrivers",
         "quantity": 25,
         "categories": [
-            "tool"
+            "tool",
+            " a drink"
         ],
         "price": 10
-    }
+    },
+    {
+        "title": "Tape Measure",
+        "quantity": 27,
+        "categories": [
+            "tool"
+        ],
+        "price": 15
+    },  {
+    "title": "Tape Measure",
+    "quantity": 27,
+    "categories": [
+        "tool"
+    ],
+    "price": 15
+}
 ]
