@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+
+<div id="post">
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+
+    "use strict";
+
+    $.get("data/blog.json").done(function(data) {
+//       console.log(data);
+        buildIndex(data);
+    });
+
+    function buildIndex(entries) {
+        var con = "";
+        for (var i = 0; i < entries.length; i++) {
+            con += "<h1>" + entries[i].title + "</h1>";
+            con += "<p>" + entries[i].content + "</p>";
+            con += "<p>" + "categories: " + entries[i].categories + "</p>";
+            con += "<p>" + "date: " + entries[i].date + "</p>";
+        }
+        console.log(con);
+        $('#post').html(con);
+    }
+
+
+</script>
+
+</body>
+</html>
+
+
