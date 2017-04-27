@@ -1,0 +1,19 @@
+.row {
+    border: 1px solid blue;
+    width: 100%;
+    padding: 23px;
+    background-color: lightskyblue;
+}
+
+
+.box {
+    height: 400px;
+    padding: 65px;
+    align-items: center;
+    background-color: white;
+}
+
+#map-canvas {
+    height: 400px;
+    border: 1px solid white;
+}
