@@ -39,12 +39,5 @@
             "tool"
         ],
         "price": 15
-    },  {
-    "title": "Tape Measure",
-    "quantity": 27,
-    "categories": [
-        "tool"
-    ],
-    "price": 15
-}
+    }
 ]

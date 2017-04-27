@@ -1,33 +1,36 @@
-<!DOCTYPE html>
-<html>
+<<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Online Store</title>
+    <title>Tool Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<h1>My Tool Store</h1>
+<div class="container">
+    <h2>My Tool Store</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
 
-<table id="products">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Categories</th>
-    </tr>
-    </thead>
-    <tbody id="insertProducts">
-
-
-    </tbody>
-</table>
-
-<button id="btn-refresh">Refresh Inventory</button>
-
-<style>
+        <tbody id="insertProducts">
 
 
-</style>
+        </tbody>
+    </table>
+
+    <button id="btn-refresh">Refresh Inventory</button>
+
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -37,13 +40,13 @@
 
         function getData(){
             $.get("data/inventory.json").done(function (data) {
-    //        console.log(data);
+                //        console.log(data);
                 buildTable(data);
             });
         }
 
         function buildTable(inventory) {
-        var content = "";
+            var content = "";
             for (var i = 0; i < inventory.length; i++) {
                 content += "<tr>";
                 content += "<td>" + inventory[i].title + "</td>";
@@ -69,6 +72,9 @@
         //       HINT: You will want to target #insertProducts for your new HTML elements
     })();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
