@@ -3,32 +3,32 @@
         "title": "Hammer",
         "quantity": 25,
         "categories": [
-            "tool"
+            "Tool"
         ],
         "price": 20
     }, {
         "title": "Drill",
         "quantity": 5,
         "categories": [
-            "tool",
-            " powered"
+            "Tool",
+            " Powered"
         ],
         "price": 100
     }, {
         "title": "Mower",
         "quantity": 5,
         "categories": [
-            "tool",
-            " gas",
-            " outdoor"
+            "Tool",
+            " Gas",
+            " Outdoor"
         ],
         "price": 200
     }, {
-        "title": "Screwdrivers",
+        "title": "Screwdriver",
         "quantity": 25,
         "categories": [
-            "tool",
-            " a drink"
+            "Tool",
+            " A drink"
         ],
         "price": 10
     },
@@ -36,7 +36,7 @@
         "title": "Tape Measure",
         "quantity": 27,
         "categories": [
-            "tool"
+            "Tool"
         ],
         "price": 15
     }

@@ -36,6 +36,7 @@
 
 <script>
     (function () {
+
         "use strict";
 
         function getData(){
@@ -46,7 +47,9 @@
         }
 
         function buildTable(inventory) {
+
             var content = "";
+
             for (var i = 0; i < inventory.length; i++) {
                 content += "<tr>";
                 content += "<td>" + inventory[i].title + "</td>";

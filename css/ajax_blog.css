@@ -11,6 +11,7 @@ strong {
     color: #1ABC9C;
 }
 
-#a {
-    text-align: center;
+a {
+    align-content: center;
+
 }
