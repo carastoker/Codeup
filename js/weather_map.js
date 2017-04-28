@@ -5,7 +5,7 @@
 (function() {
 
     "use strict";
-
+    // page load
     function getAjax(lat, lng) {
         $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
             APPID: "31ae192f96e6436d8cd2a8ef234d6a59",
@@ -18,27 +18,27 @@
         });
     }
 
-    getAjax(29.426791, -98.489602);
+    getAjax(37.09024, -95.712891);
 
     function findWeather(weather) {
         var content ="<h2>" + weather.city.name + "</h2>";
-        console.log(weather);
+        // console.log(weather);
 
         for (var i = 0; i < weather.list.length; i++) {
             content += "<div  class='col-sm-4 box text-center'>";
-            content += "<h2>" + weather.list[i].temp.min + "/" + weather.list[i].temp.max + "</h2>";
+            content += "<h2>" + (Math.ceil(weather.list[i].temp.min)) + " / " + (Math.ceil(weather.list[i].temp.max)) + "</h2>";
             content += "<img src='http://openweathermap.org/img/w/" + weather.list[i].weather[0].icon + ".png'>";
             content += "<p>" + "<strong>Clouds:</strong> " + weather.list[i].clouds + "</p>";
             content += "<p>" + "<strong>Humidity:</strong> " + weather.list[i].humidity + "</p>";
             content += "<p>" + "<strong>Wind:</strong> " + weather.list[i].speed + "</p>";
-            content += "<p>" + "<strong>Pressure:</strong> " + weather.list[i].pressure + "</p>";
+            content += "<p>" + "<strong>Pressure:</strong> " + (Math.ceil(weather.list[i].pressure)) + "</p>";
             content += "</div>";
 
         }
 
         $("#container-1").html(content);
 
-        console.log(content);
+        // console.log(Math.ceil(weather.list[i].temp.max));
         // $('.container').html(content);
     }
 
@@ -47,17 +47,98 @@
 
     function startMap() {
         geoCoder = new google.maps.Geocoder();
-        var latlng = new google.maps.LatLng(29.426791, -98.489602);
+        var latlng = new google.maps.LatLng(37.09024, -95.712891);
         var mapOptions = {
-            zoom: 18,
+            zoom: 4,
             center: latlng,
             disableDefaultUI: true,
-            mapTypeId: google.maps.MapTypeId.TERRAIN,
-            scrollwheel: false
+            mapTypeId: google.maps.MapTypeId.TERRIAN,
+            // additional my styling code
+            styles: [
+                {
+                    "featureType":"administrative.land_parcel",
+                    "elementType":"all",
+                    "stylers":[{
+                        "visibility":"off"
+                    }]
+                },{
+                    "featureType":"landscape.man_made",
+                    "elementType":"all",
+                    "stylers":[{
+                        "visibility":"off"
+                    }]
+                },{
+                    "featureType":"poi",
+                    "elementType":"labels",
+                    "stylers":[{
+                        "visibility":"off"
+                    }]
+                },{
+                    "featureType":"road",
+                    "elementType":"labels",
+                    "stylers":[{
+                        "visibility":"simplified"
+                    },{
+                        "lightness":-20
+                    }]
+                },{
+                    "featureType":"road.highway",
+                    "elementType":"geometry",
+                    "stylers":[{
+                        "hue":"#00ffe6"
+                    }]
+                },{
+                    "featureType":"road.highway",
+                    "elementType":"labels",
+                    "stylers":[{
+                        "visibility":"simplified"
+                    }]
+                },{
+                    "featureType":"road.arterial",
+                    "elementType":"geometry",
+                    "stylers":[{
+                        "hue":"#00ffe6"
+                    }]
+                },{
+                    "featureType":"road.arterial",
+                    "elementType":"labels",
+                    "stylers":[{
+                        "visibility":"off"
+                    }]
+                },{
+                    "featureType":"road.local",
+                    "elementType":"geometry",
+                    "stylers":[{
+                        "visibility":"simplified"
+                    }]
+                },{
+                    "featureType":"road.local",
+                    "elementType":"labels",
+                    "stylers":[{
+                        "visibility":"simplified"
+                    }]
+                },{
+                    "featureType":"transit",
+                    "elementType":"all",
+                    "stylers":[{
+                        "visibility":"off"
+                    }]
+                },{
+                    "featureType":"water",
+                    "elementType":"all",
+                    "stylers":[{
+                        "hue":"#00ffe6"
+                    },{
+                        "saturation": -20
+                    },{
+                        "lightness": 100
+                    }]
+                }]
+            // scrollwheel: false
         }
 
         mapCode = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
+        createMarker(latlng.lat(), latlng.lng());
     }
     startMap();
 
@@ -72,16 +153,30 @@
                 var lat = results[0].geometry.location.lat();
                 var lon = results[0].geometry.location.lng();
                 getAjax(lat, lon);
-                var marker = new google.maps.Marker({
-                    position: results[0].geometry.location,
-                    map: mapCode
-
-                });
+                createMarker(lat, lon);
 
             } else {
                 alert('geoCode failed for following reason: ' + status);
             }
 
+        });
+    }
+
+    function createMarker(lat, lon) {
+        var marker = new google.maps.Marker({
+            position: {
+                lat : lat,
+                lng : lon
+            },
+            map: mapCode,
+            draggable: true,
+            animation: google.maps.Animation.DROP
+        });
+
+        marker.addListener('dragend', function() {
+            var lat = this.position.lat();
+            var lng = this.position.lng();
+            getAjax(lat,lng);
         });
     }
 
