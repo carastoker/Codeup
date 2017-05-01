@@ -21,16 +21,17 @@
     getAjax(37.09024, -95.712891);
 
     function findWeather(weather) {
+
         var content ="<h2>" + weather.city.name + "</h2>";
         // console.log(weather);
 
         for (var i = 0; i < weather.list.length; i++) {
-            content += "<div  class='col-sm-4 box text-center'>";
-            content += "<h2>" + (Math.ceil(weather.list[i].temp.min)) + " / " + (Math.ceil(weather.list[i].temp.max)) + "</h2>";
+            content += "<div  class='col-md-4 box text-center'>";
+            content += "<h2>" + (Math.ceil(weather.list[i].temp.min)) + "&deg; / " + (Math.ceil(weather.list[i].temp.max)) + "&deg;" + "</h2>";
             content += "<img src='http://openweathermap.org/img/w/" + weather.list[i].weather[0].icon + ".png'>";
-            content += "<p>" + "<strong>Clouds:</strong> " + weather.list[i].clouds + "</p>";
-            content += "<p>" + "<strong>Humidity:</strong> " + weather.list[i].humidity + "</p>";
-            content += "<p>" + "<strong>Wind:</strong> " + weather.list[i].speed + "</p>";
+            content += "<p>" + "<strong>"+ weather.list[i].weather[0].main + ":</strong> " + weather.list[i].weather[0].description + "</p>";
+            content += "<p>" + "<strong>Humidity:</strong> " + (Math.ceil(weather.list[i].humidity)) + "</p>";
+            content += "<p>" + "<strong>Wind:</strong> " + (Math.ceil(weather.list[i].speed)) + "</p>";
             content += "<p>" + "<strong>Pressure:</strong> " + (Math.ceil(weather.list[i].pressure)) + "</p>";
             content += "</div>";
 
@@ -53,7 +54,7 @@
             center: latlng,
             disableDefaultUI: true,
             mapTypeId: google.maps.MapTypeId.TERRIAN,
-            // additional my styling code
+            // additional map styling code
             styles: [
                 {
                     "featureType":"administrative.land_parcel",
